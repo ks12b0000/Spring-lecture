@@ -30,4 +30,23 @@ public class ConfigurationSingletonTest {
         assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);
         assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
     }
+
+    @Test
+    void configurationDeep() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        System.out.println("bean = " + bean.getClass());
+
+    }
 }
+
+
+/*
+
+        memberService -> memberRepository =
+        hello.core.member.MemoryMemberRepository@6239aba6
+        orderService -> memberRepository =
+        hello.core.member.MemoryMemberRepository@3e6104fc
+        memberRepository = hello.core.member.MemoryMemberRepository@12359a82
