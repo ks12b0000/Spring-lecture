@@ -42,11 +42,3 @@ public class ConfigurationSingletonTest {
     }
 }
 
-
-/*
-
-        memberService -> memberRepository =
-        hello.core.member.MemoryMemberRepository@6239aba6
-        orderService -> memberRepository =
-        hello.core.member.MemoryMemberRepository@3e6104fc
-        memberRepository = hello.core.member.MemoryMemberRepository@12359a82
